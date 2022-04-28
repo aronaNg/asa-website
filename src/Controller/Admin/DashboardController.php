@@ -18,6 +18,7 @@ class DashboardController extends AbstractDashboardController
     public function index(): Response
     {
         return parent::index();
+
     }
 
     public function configureDashboard(): Dashboard
@@ -35,6 +36,12 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::subMenu('Actions', 'fas fa-bars')->setSubItems([
             MenuItem::linkToCrud('Create News', 'fas fa-plus', News::class)->setAction(Crud::PAGE_NEW),
             MenuItem::linkToCrud('Show News', 'fas fa-eye', News::class)
+        ]);
+
+        yield MenuItem::section('Users');
+        yield MenuItem::subMenu('Actions', 'fas fa-users')->setSubItems([
+            MenuItem::linkToCrud('Create user', 'fas fa-plus', News::class)->setAction(Crud::PAGE_NEW),
+            MenuItem::linkToCrud('Show Users', 'fas fa-eye', News::class)
         ]);
     }
 }
