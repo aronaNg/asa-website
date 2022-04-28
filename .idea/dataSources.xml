@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="asa-company@localhost" uuid="a4f435a1-8ec9-405e-9fa0-63a21a0d55be">
+    <data-source source="LOCAL" name="stagesasa@localhost" uuid="de5ab011-0f1e-4b9d-8efc-41af2f7c99a6">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/asa-company</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/stagesasa</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
