@@ -32,6 +32,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $roles = [];
 
     /**
+     *Length(max=4096)
+     */
+    private $plainPassword;
+
+    /**
      * @var string The hashed password
      * @ORM\Column(type="string")
      */
@@ -47,11 +52,22 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $lastName;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isVerified = false;
+
     public function __toString()
     {
         // TODO: Implement __toString() method.
-        return "email : ".$this->getEmail()." role: ".$this->getRoles()[0]." mdp:".$this->getPassword();
+        return "email : ".$this->getEmail();
     }
+
+    public function __construct()
+    {
+        $this->roles = ['ROLE_USER'];
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -156,5 +172,27 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->lastName = $lastName;
 
         return $this;
+    }
+
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setIsVerified(bool $isVerified): self
+    {
+        $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    public function setPlainPassword($password)
+    {
+        $this->plainPassword = $password;
     }
 }
