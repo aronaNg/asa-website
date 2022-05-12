@@ -16,19 +16,10 @@ class IndexController extends AbstractController
     {
         if($this->isGranted('ROLE_ADMIN')) {
             return $this->redirectToRoute('admin');
-            // return $this->render('admin/produit/showProduits.html.twig');
         }
-        if($this->isGranted('ROLE_USER')) {
-            /*            if(! is_null($this->getUser())){
-                            echo "<br>";
-                            echo " id: ".$this->getUser()->getId();
-                            echo " roles :   ";
-                            print_r($this->getUser()->getRoles());
-                            die();
-                        }*/
+        else if($this->isGranted('ROLE_USER')) {
             return $this->redirectToRoute('app_home');
         }
-        return $this->render('index.html.twig');
-
+        return $this->render('home/index.html.twig');
     }
 }
