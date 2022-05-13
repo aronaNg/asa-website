@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,60 +15,7 @@
         {% endblock %}
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">ASA</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Actualités</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Présentation</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Faire un don</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">Mon espace</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link">Contact</a>
-                    </li>
-                </ul>
-
-                <ul class="nav navbar-nav ms-auto">
-                    <!-- Authentication Links -->
-                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <span class="navbar-text mr-2 h5">
-                    Bonjour {{ app.user.firstname }}
-                            {% if is_granted('ROLE_ADMIN') %} (role : Admin )
-                            {% elseif is_granted('ROLE_CLIENT') %} (role : Client ) {% endif %}
-                        </span>
-                        <a class="btn btn-success text-center" type="button" href="{{path('app_logout') }}">
-                            Se déconnecter
-                        </a>
-
-                    {% else %}
-                        <a class="btn btn-outline-success mx-1" type="button" href="{{path('app_login') }}">
-                            Se connecter
-                        </a>
-                        <a class="btn btn-outline-success mx-1" type="button" href="{{ path('app_register') }}">
-                            S'inscrire
-                        </a>
-                        <a class="btn btn-outline-success mx-1" type="button" href="{#{path('changePassword') }#}">
-                            Mot de passe oublié
-                        </a>
-                    {% endif %}
-
-                </ul>
-            </div>
-        </div>
-    </nav>
+        {% include 'header-footer/_nav.html.twig' %}
         {% block body %}{% endblock %}
     </body>
 </html>
