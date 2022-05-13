@@ -60,7 +60,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function __toString()
     {
         // TODO: Implement __toString() method.
-        return "email : ".$this->getEmail();
+        return "email : ".$this->getEmail()." -".$this->getFirstName();
     }
 
     public function __construct()
