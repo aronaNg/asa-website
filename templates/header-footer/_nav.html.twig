@@ -24,30 +24,35 @@
                 </li>
             </ul>
 
-            <ul class="nav navbar-nav ms-auto">
-                <!-- Authentication Links -->
-                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <span class="navbar-text mr-2 h5">
-                    Bonjour {{ app.user.firstname }}
-                        {% if is_granted('ROLE_ADMIN') %} (role : Admin ) {% endif %}
-                        </span>
-                    <a class="btn btn-success text-center mx-2" type="button" href="{{path('app_logout') }}">
-                        Se déconnecter
-                    </a>
+            <div class="d-flex">
+                <ul class="navbar-nav me-auto">
+                    {% if app.user %}
+                        <li class="nav-item dropdown" style="margin-right: 10rem;">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ app.user.firstName }}</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{# { path('user.edit', {id : app.user.id}) }} #}">Modifier mes informations</a>
+                                <a class="dropdown-item" href="{# { path('user.edit.password', {id : app.user.id}) } #}}">Modifier mon mot de passe</a>
+                                <div class="dropdown-divider"></div>
+                                {% if 'ROLE_ADMIN' in app.user.roles %}
+                                    <a class="dropdown-item" href="{{ path('admin') }}">Administration</a>
+                                    <div class="dropdown-divider"></div>
+                                {% endif %}
+                                <a class="dropdown-item" href="{{ path('app_logout') }}">Déconnexion</a>
+                            </div>
+                        </li>
+                    {% else %}
 
-                {% else %}
-                    <a class="btn btn-outline-success mx-1" type="button" href="{{path('app_login') }}">
-                        Se connecter
-                    </a>
-                    <a class="btn btn-outline-success mx-1" type="button" href="{{ path('app_register') }}">
-                        S'inscrire
-                    </a>
-                    <a class="btn btn-outline-success mx-1" type="button" href="{#{path('changePassword') }#}">
-                        Mot de passe oublié
-                    </a>
-                {% endif %}
+                        <a class="btn btn-outline-success mx-1" type="button" href="{{path('app_login') }}">
+                            Se connecter
+                        </a>
+                        <a class="btn btn-outline-success mx-1" type="button" href="{{ path('app_register') }}">
+                            S'inscrire
+                        </a>
+                    {% endif %}
 
-            </ul>
+                </ul>
+
+            </div>
         </div>
     </div>
 </nav>
