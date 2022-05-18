@@ -36,16 +36,15 @@ class Team
     private $image;
 
     /**
-     * @Vich\UploadableField(mapping="team", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="product_images", fileNameProperty="image")
      * @var File
      */
     private $imageFile;
 
     /**
-     * @ORM\Column(type="datetime")
-     * @var \DateTime
+     * @ORM\Column(type="datetime_immutable")
      */
-    private \DateTime $updatedAt;
+    private  $updatedAt;
 
     public function getId(): ?int
     {
@@ -76,7 +75,11 @@ class Team
         return $this;
     }
 
-    public function setImageFile(File $image = null)
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+    public function setImageFile(File $image):self
     {
         $this->imageFile = $image;
 
@@ -85,13 +88,15 @@ class Team
         // otherwise the event listeners won't be called and the file is lost
         if ($image) {
             // if 'updatedAt' is not defined in your entity, use another property
-            $this->updatedAt = new \DateTime('now');
+            $this->updatedAt = new \DateTimeImmutable();
         }
+        return $this;
     }
 
-    public function getImageFile()
+
+    public function getImage()
     {
-        return $this->imageFile;
+        return $this->image;
     }
 
     public function setImage($image)
@@ -99,8 +104,15 @@ class Team
         $this->image = $image;
     }
 
-    public function getImage()
+    public function getUpdatedAt(): ?\DateTimeImmutable
     {
-        return $this->image;
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeImmutable $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\News;
+use App\Entity\Team;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -29,7 +30,7 @@ class DashboardController extends AbstractDashboardController
     {
         return Dashboard::new()
        //     ->setTitle('Asa App')
-            ->setTitle('<img src="public/upload/images/asa.jpg" alt="Logo d\'ASA"> Admin ASA');
+            ->setTitle('<img src="assets/asa.jpg" alt="Logo d\'ASA"> Admin ASA');
     }
 
     public function configureMenuItems(): iterable
@@ -44,9 +45,15 @@ class DashboardController extends AbstractDashboardController
         ]);
 
         yield MenuItem::section('Users');
-        yield MenuItem::subMenu('Actions', 'fas fa-users')->setSubItems([
+        yield MenuItem::subMenu('Actions', 'fas fa-user')->setSubItems([
             MenuItem::linkToCrud('Create user', 'fas fa-plus', User::class)->setAction(Crud::PAGE_NEW),
             MenuItem::linkToCrud('Show Users', 'fas fa-eye', User::class)
+        ]);
+
+        yield MenuItem::section('Team');
+        yield MenuItem::subMenu('Actions', 'fas fa-users')->setSubItems([
+            MenuItem::linkToCrud('Create Team', 'fas fa-plus', Team::class)->setAction(Crud::PAGE_NEW),
+            MenuItem::linkToCrud('Show Team', 'fas fa-eye', Team::class)
         ]);
     }
 }
