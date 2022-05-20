@@ -24,8 +24,10 @@ class TeamCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnForm(),
             ImageField::new('image',"image")
+                ->hideOnForm()
                 ->setBasePath('/upload/images/team/')
                 ->setUploadDir('/public/upload/images/team/'),
+
             TextField::new('name'),
             TextEditorField::new('entitled'),
             TextareaField::new('imageFile')

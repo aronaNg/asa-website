@@ -22,21 +22,38 @@ class RegistrationFormType extends AbstractType
 
 
         $builder
-            ->add('email', EmailType::class)
-            ->add('firstname', TextType::class)
-            ->add('lastname', TextType::class)
+            ->add('email', EmailType::class, [
+                'label' => 'Votre email : ',
+                'attr' => [
+                    'class' => 'form-control mb-3'
+                ]
+            ])
+
+            ->add('firstname', TextType::class, [
+                'label' => 'Votre prenom : ',
+                'attr' => [
+                    'class' => 'form-control mb-3'
+                ]
+            ])
+            ->add('lastname', TextType::class, [
+                'label' => 'Votre nom : ',
+                'attr' => [
+                    'class' => 'form-control mb-3'
+                ]
+            ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
+                'label' => "Accepter les conditions : ",
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'You should agree to our terms.',
+                        'message' => 'Vous devez accepter les conditions du site.',
                     ]),
                 ],
             ])
             ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
-                'first_options'  => array('label' => 'Password'),
-                'second_options' => array('label' => 'Repeat Password'),
+                'first_options'  => array('label' => 'Votre mot de passe :'),
+                'second_options' => array('label' => 'Repetez le mot de passe :'),
             ))
         ;
     }
