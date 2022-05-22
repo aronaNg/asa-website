@@ -14,6 +14,10 @@ Install dependencies : composer install
 
 Create database : php bin/console doctrine:database:create
 
+ Use fixtures or faker : php bin/console doctrine:fixtures:load or php bin/console d:f:l
+
+
+
 Update the database with this 2 commands
 
   1 php bin/console make:migrations
