@@ -16,9 +16,9 @@ Create database : php bin/console doctrine:database:create
 
 Update the database with this 2 commands
 
-  php bin/console make:migrations
+  1 php bin/console make:migrations
 
-  php bin/console migrations:migrate
+  2 php bin/console doctrine:migrations:migrate
 
 
 launch application : symfony serve
