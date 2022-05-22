@@ -22,3 +22,5 @@ Update the database with this 2 commands
 
 
 launch application : symfony serve
+
+To update the database : php bin/console d:s:u
