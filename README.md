@@ -10,6 +10,6 @@ PHP >=7.2.5
 
 Install npm :  sudo apt-get install -y npm
 
-Install the dependencies : composer install
+Install dependencies : composer install
 
 launch application : symfony serve
