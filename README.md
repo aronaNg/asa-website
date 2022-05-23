@@ -1,6 +1,6 @@
 # asa-app
 
-#Prerequisite
+#Prerequisites
 
 Download composer : https://getcomposer.org/
 
@@ -16,10 +16,14 @@ PHP >=7.2.5
 
 💡 Install dependencies : composer install
 
+💡 Configure your .env file according to the database you are using.
+   Hint: the line starts with #DATABASE. Uncomment the one you are using.
+
 💡 Create database : php bin/console doctrine:database:create OR php bin/console d:d:c
 
 💡 Use fixtures or faker : php bin/console doctrine:fixtures:load OR php bin/console d:f:l
-💡 Do database migrationss with this 2 commands
+
+💡 Do database migrations with this 2 commands
 
     1- php bin/console make:migrations
 
@@ -28,4 +32,6 @@ PHP >=7.2.5
 💡 To update the database : php bin/console d:s:u
 
 
-:white_check_mark: launch application 🧑‍💻 : symfony serve
+:white_check_mark: launch the app and enjoy 🧑‍💻 : symfony serve
+
+💥 Important: If you are having problems with the "build", check if you have the public/build folder which contains files. Otherwise do "npm run" and take one of the indicated choices
