@@ -10,9 +10,9 @@ PHP >=7.2.5
 
 #Please follow these steps to launch the app locally
 
-✨ git clone https://github.com/stages-asa-app/asa-app.git
+💡 git clone https://github.com/stages-asa-app/asa-app.git
 
-✨ Install npm :  sudo apt-get install -y npm
+💡 Install npm :  sudo apt-get install -y npm
 
 :white_check_mark: Install dependencies : composer install
 
