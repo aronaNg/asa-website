@@ -14,19 +14,18 @@ PHP >=7.2.5
 
 💡 Install npm :  sudo apt-get install -y npm
 
-:white_check_mark: Install dependencies : composer install
+💡 Install dependencies : composer install
 
-:white_check_mark: Create database : php bin/console doctrine:database:create OR php bin/console d:d:c
+💡 Create database : php bin/console doctrine:database:create OR php bin/console d:d:c
 
-:white_check_mark: Use fixtures or faker : php bin/console doctrine:fixtures:load OR php bin/console d:f:l
+💡 Use fixtures or faker : php bin/console doctrine:fixtures:load OR php bin/console d:f:l
+💡 Do database migrationss with this 2 commands
 
-:white_check_mark: Do database migrationss with this 2 commands
+    1- php bin/console make:migrations
 
-  1- php bin/console make:migrations
-
-  2- php bin/console doctrine:migrations:migrate
+    2- php bin/console doctrine:migrations:migrate
   
-:white_check_mark: To update the database : php bin/console d:s:u
+💡 To update the database : php bin/console d:s:u
 
 
-:white_check_mark: launch application : symfony serve
+:white_check_mark: launch application 🧑‍💻 : symfony serve
