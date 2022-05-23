@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Welcome to ASA{% endblock %}
 
 {% block body %}
 <style>
@@ -10,15 +10,6 @@
 
 <div class="example-wrapper">
     <h1>Hello ! ✅</h1>
-        {% for team in equips %}
-            <div id="easyadmin-lightbox-{{ team.id }}" class="easyadmin-lightbox">
-                {# the second parameter is the name of the property with the UploadableField annotation #}
-                <img width="500" src="{{ vich_uploader_asset(team, 'imageFile') }}">
-            </div>
-            <td>
-                {{ team.entitled | raw }}
-            </td>
-        {% endfor %}
     This friendly message is coming from:
     <ul>
         <li>Your controller at <code><a href="{{ '/home/arona/Bureau/Stage2022/app/asa-app/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>

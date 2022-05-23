@@ -4,9 +4,12 @@ namespace App\Entity;
 
 use App\Repository\NewsRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=NewsRepository::class)
+ * @Vich\Uploadable
  */
 class News
 {
@@ -31,6 +34,12 @@ class News
      * @ORM\Column(type="string", length=255)
      */
     private $image;
+
+    /**
+     * @Vich\UploadableField(mapping="news_images", fileNameProperty="image")
+     * @var File
+     */
+    private $imageTeam;
 
     /**
      * @ORM\Column(type="datetime_immutable")
@@ -71,16 +80,32 @@ class News
         return $this;
     }
 
+    public function getImageTeam()
+    {
+        return $this->imageTeam;
+    }
+    public function setImageTeam(File $image):self
+    {
+        $this->imageTeam = $image;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+        return $this;
+    }
+
     public function getImage(): ?string
     {
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage($image)
     {
         $this->image = $image;
-
-        return $this;
     }
 
     public function getCreatedAt(): ?\DateTimeImmutable

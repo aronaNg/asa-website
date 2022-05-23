@@ -11,8 +11,10 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class NewsCrudController extends AbstractCrudController
 {
@@ -50,11 +52,16 @@ class NewsCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
-            TextField::new('title'),
+
+            ImageField::new('image',"image")
+                ->hideOnForm()
+                ->setBasePath('/upload/images/news/')
+                ->setUploadDir('/public/upload/images/news/'),
+            TextField::new('title', "News title"),
             TextEditorField::new('description'),
-            ImageField::new('image')
-                ->setBasePath(self::NEWS_BASE_PATH)
-                ->setUploadDir(self::NEWS_UPLOAD_DIR),
+            TextareaField::new('imageTeam', "News image")
+                ->setFormType(VichImageType::class)
+                ->hideOnIndex(),
             DateField::new('createdAt')->hideOnForm(),
             DateField::new('updatedAt')->hideOnForm()
 
