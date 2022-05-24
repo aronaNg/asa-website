@@ -22,7 +22,7 @@ class DashboardController extends AbstractDashboardController
     {
         $routeBuilder = $this->get(AdminUrlGenerator::class);
 
-        return $this->redirect($routeBuilder->setController(NewsCrudController::class)->generateUrl());
+        return $this->redirect($routeBuilder->setController(UserCrudController::class)->generateUrl());
 
     }
 
@@ -36,6 +36,7 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
+        yield MenuItem::linkToRoute('User interface','fa fa-house-user','app_home');
       //  yield MenuItem::linkToCrud('Actualités', 'fas fa-newspaper', News::class);
 
         yield MenuItem::section('News');
@@ -46,6 +47,7 @@ class DashboardController extends AbstractDashboardController
 
         yield MenuItem::section('Users');
         yield MenuItem::subMenu('Actions', 'fas fa-user')->setSubItems([
+            MenuItem::linkToCrud('Create User', 'fas fa-plus', User::class)->setAction(Crud::PAGE_NEW),
             MenuItem::linkToCrud('Show Users', 'fas fa-eye', User::class)
         ]);
 

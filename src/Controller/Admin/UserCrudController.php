@@ -46,13 +46,11 @@ class UserCrudController extends AbstractCrudController
         return [
             IdField::new('id')
             ->hideOnForm(),
-            EmailField::new('email')
-                ->setDisabled(true),
+            EmailField::new('email'),
             TextField::new('firstName'),
             TextField::new('lastName'),
             TextField::new('password')
-                ->hideOnIndex()
-                ->setDisabled(true),
+                ->hideOnIndex(),
             ArrayField::new('roles'),
             BooleanField::new('isVerified')
 
