@@ -39,7 +39,7 @@ class News
      * @Vich\UploadableField(mapping="news_images", fileNameProperty="image")
      * @var File
      */
-    private $imageTeam;
+    private $imageNews;
 
     /**
      * @ORM\Column(type="datetime_immutable")
@@ -80,13 +80,13 @@ class News
         return $this;
     }
 
-    public function getImageTeam()
+    public function getImageNews()
     {
-        return $this->imageTeam;
+        return $this->imageNews;
     }
-    public function setImageTeam(File $image):self
+    public function setImageNews(File $image):self
     {
-        $this->imageTeam = $image;
+        $this->imageNews = $image;
 
         // VERY IMPORTANT:
         // It is required that at least one field changes if you are using Doctrine,
