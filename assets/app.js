@@ -1,3 +1,4 @@
+import './styles/team.scss'
 import './styles/carousel.scss';
 import './styles/connexion.scss';
 import './styles/app.scss';

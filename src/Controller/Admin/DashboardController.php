@@ -30,7 +30,7 @@ class DashboardController extends AbstractDashboardController
     {
         return Dashboard::new()
        //     ->setTitle('Asa App')
-            ->setTitle('<img src="assets/asa.jpg" alt="Logo d\'ASA"> Admin ASA');
+            ->setTitle('<img src="/public/media/asa.jpg" alt="Logo d\'ASA"> Admin ASA');
     }
 
     public function configureMenuItems(): iterable
