@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #112A46">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ path('app_home') }}">ASA</a>
+        <a class="navbar-brand" href="{{ path('app_home') }}"> <img src="{{ asset('media/asa.jpg') }}" style="height: 30px" class="img-fluid rounded-circle w-50" >  ASA</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -10,19 +10,25 @@
                     <a class="nav-link active" aria-current="page" href="#">Actualités</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#team">Présentation</a>
+                    <a class="nav-link active" href="#team">Présentation</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Faire un don</a>
+                    <a class="nav-link active" href="#">Faire un don</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">Mon espace</a>
+                    <a class="nav-link active">Mon espace</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#phone">Contact</a>
+                    <a class="nav-link active" href="#phone">Contact</a>
                 </li>
             </ul>
+
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="rechercher" aria-label="Search">
+                <button class="btn btn-outline-info" type="submit"><i class="bi bi-search"></i> </button>
+            </form>
+
 
             <div class="d-flex">
                 <ul class="navbar-nav me-auto">
@@ -42,10 +48,10 @@
                         </li>
                     {% else %}
 
-                        <a class="btn btn-outline-success mx-1" type="button" href="{{path('app_login') }}">
+                        <a class="btn btn-outline-info mx-1" type="button" href="{{path('app_login') }}">
                             Se connecter
                         </a>
-                        <a class="btn btn-outline-success mx-1" type="button" href="{{ path('app_register') }}">
+                        <a class="btn btn-outline-info mx-1" type="button" href="{{ path('app_register') }}">
                             S'inscrire
                         </a>
                     {% endif %}
