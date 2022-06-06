@@ -25,31 +25,25 @@ class RegistrationFormType extends AbstractType
             ->add('email', EmailType::class, [
                 'label' => 'Votre email : ',
                 'attr' => [
-                    'class' => 'form-control mb-3'
+                    'placeholder' => 'entrer votre email',
                 ]
+
             ])
 
             ->add('firstname', TextType::class, [
                 'label' => 'Votre prenom : ',
                 'attr' => [
-                    'class' => 'form-control mb-3'
+                    'placeholder' => 'entrer votre prenom'
                 ]
+
             ])
             ->add('lastname', TextType::class, [
                 'label' => 'Votre nom : ',
                 'attr' => [
-                    'class' => 'form-control mb-3'
+                    'placeholder' => 'entrer votre nom'
                 ]
             ])
-            ->add('agreeTerms', CheckboxType::class, [
-                'mapped' => false,
-                'label' => "Accepter les conditions : ",
-                'constraints' => [
-                    new IsTrue([
-                        'message' => 'Vous devez accepter les conditions du site.',
-                    ]),
-                ],
-            ])
+
             ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
                 'first_options'  => array('label' => 'Votre mot de passe :'),

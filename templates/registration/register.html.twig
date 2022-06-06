@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'mabase.html.twig' %}
 
 {% block title %}Register{% endblock %}
 
@@ -7,28 +7,40 @@
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
 
-    <div class="container">
-            <h1 class="mt-3">Creer votre compte </h1><br>
-            {{ form_start(form) }}
-            <div class="form-group">
-                {{ form_row(form.lastname,{'attr':{'class':'form-control mb-3'}}) }}
-            </div>
-            <div class="form-group">
-                {{ form_row(form.firstname,{'attr':{'class':'form-control mb-3'}}) }}
-            </div>
-            <div class="form-group">
-                {{ form_row(form.email,{'attr':{'class':'form-control mb-3'}}) }}
-            </div>
-            <div class="form-group">
-                {{ form_row(form.plainPassword.first,{'attr':{'class':'form-control mb-3'}}) }}
-            </div>
-            <div class="form-group">
-                {{ form_row(form.plainPassword.second,{'attr':{'class':'form-control mb-3'}}) }}
-            </div>
-            <div class="form-group">
-                {{ form_row(form.agreeTerms,{'attr':{'class':'checkbox mt-3 mx-2'}}) }}
-            </div>
-            <button class="btn btn-success mt-3" type="submit">Enregistrer</button>
+    <div class="moncontainer">
+        {{ form_start(form) }}
+        <div class="title">Inscription</div>
+        <div class="content">
+            <form>
+                <div class="user-details">
+                    <div class="row">
+                        <div class="input-box text-center">
+                            <span class="details">{{ form_row(form.firstname) }}</span>
+                        </div>
+                        <div class="input-box text-center">
+                            <span class="details">{{ form_row(form.lastname) }}</span>
+                        </div>
+                    </div>
+                    <div class="input-box text-center">
+                        <span class="details">{{ form_row(form.email) }}</span>
+                    </div>
+                   <div class="row">
+                       <div class="input-box text-center">
+                           <span class="details">{{ form_row(form.plainPassword.first) }}</span>
+                       </div>
+                       <div class="input-box text-center">
+                           <span class="details">{{ form_row(form.plainPassword.second) }}</span>
+                       </div>
+                   </div>
+                </div>
+
+                <div class="button">
+                    <input type="submit" value="S'inscrire">
+                </div>
+
+            </form>
             {{ form_end(form) }}
+
+        </div>
     </div>
 {% endblock %}
