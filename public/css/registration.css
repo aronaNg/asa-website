@@ -16,9 +16,10 @@ body{
 .moncontainer{
     max-width: 700px;
     width: 100%;
+    margin-top: 100px;
     background-color: #fff;
     padding: 25px 30px;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 }
 .moncontainer .title{
