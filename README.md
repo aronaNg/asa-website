@@ -8,6 +8,8 @@ Symfony 5.4 : https://symfony.com/doc/5.4/setup/
 
 PHP >=7.2.5
 
+MySQL 8.0
+
 #Please follow these steps to launch the app locally
 
 💡 git clone https://github.com/stages-asa-app/asa-app.git

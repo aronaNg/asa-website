@@ -3,7 +3,7 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
-    <div class="loginbox">
+    <div class="loginbox mt-5">
         {% if error %}
             <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center" role="alert">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
@@ -24,7 +24,7 @@
             {% endif %}
             <label for="inputEmail">Email
                 <i class="fa-solid fa-envelope"></i> :
-                <input type="email" name="email" id="inputEmail" placeholder="Entrer votre nom" required autofocus></label><br><br>
+                <input type="email" name="email" id="inputEmail" placeholder="Entrer votre email" required autofocus></label><br><br>
             <label for="inputPassword">Mot de passe
                 <i class="fa-solid fa-lock"></i> :
                 <input type="password" name="password" id="inputPassword" placeholder="Entrer votre mot de passe" required></label>
