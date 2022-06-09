@@ -26,15 +26,15 @@
                 </div>
             {% endfor %}
         </div>
-        <div class="col-xs1">Prénom:</div>
+        <div class="col-xs1 mt-5">Prénom:</div>
         <div class="col-xs3"> <h3>{{ app.user.firstName }}</h3></div><br>
         <div class="col-xs1">Nom:</div>
         <div class="col-xs3"> <h3>{{ app.user.lastName }}</h3></div><br>
         <div class="col-xs1">Email :</div>
         <div class="col-xs3"><h3>{{ app.user.email }}</h3></div><br><br>
         <div class="col-xs4">
-            <a href="{{ path('users_profil_modifier') }}" class="btn btn-info">Modifier votre profil</a>
-            <a href="{{ path('users_pass_modifier')}}" class="btn btn-info">Modifier votre mot de passe</a>
+            <a href="{{ path('users_profil_modifier') }}" class="btn btn-info mb-2">Modifier votre profil</a>
+            <a href="{{ path('users_pass_modifier')}}" class="btn btn-info mb-2">Modifier votre mot de passe</a>
         </div>
 
     </div>

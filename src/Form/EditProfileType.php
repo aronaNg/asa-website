@@ -16,7 +16,7 @@ class EditProfileType extends AbstractType
     {
         $builder
             ->add('firstName', TextType::class, [
-                'label' => 'Votre prenom : '
+                'label' => 'Votre prenom : ',
             ])
             ->add('lastName', TextType::class, [
                 'label' => 'Votre nom : '
