@@ -268,6 +268,36 @@
                             </div>
                         </div>
                     </div>
+                    {% for team in teams  %}
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img src="{{ vich_uploader_asset(team, 'imageFile') }}" alt="Image {{ team.name }}" class="img-fluid rounded-circle w-50 mb-3">
+                                    <h3>{{ team.name }}</h3>
+                                    <h5>Secrétaire</h5>
+                                    <p>{{ team.entitled }}</p>
+                                    <div class="d-flex flex-row justify-content-center">
+                                        <div class="p-4">
+                                            <a href="#">
+                                                <i class="bi bi-facebook">
+                                                </i>
+                                            </a>
+                                        </div>
+                                        <div class="p-4">
+                                            <a href="#">
+                                                <i class="bi bi-twitter"></i>
+                                            </a>
+                                        </div>
+                                        <div class="p-4">
+                                            <a href="#">
+                                                <i class="bi bi-instagram"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>
