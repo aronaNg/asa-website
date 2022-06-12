@@ -7,10 +7,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Actualités</a>
+                    <a class="nav-link active" aria-current="page" href="{{ path('app_home') }}">Actualités</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#team">Présentation</a>
+                    <a class="nav-link active" href="{{ path('team') }}">Présentation</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="{{ path('paiement') }}">Faire un don</a>
@@ -22,7 +22,7 @@
                 {% endif %}
 
                 <li class="nav-item">
-                    <a class="nav-link active" href="#phone">Contact</a>
+                    <a class="nav-link active" href="{{ path('user_contact') }}">Contact</a>
                 </li>
             </ul>
 
