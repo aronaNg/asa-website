@@ -2,24 +2,21 @@
 
 namespace App\Controller;
 
-use App\Repository\NewsRepository;
 use App\Repository\TeamRepository;
-use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HomeController extends AbstractController
+class TeamController extends AbstractController
 {
     /**
-     * @Route("/", name="app_home")
+     * @Route("/team", name="team")
      */
     public function index(TeamRepository $teamRepository): Response
     {
         $teams=$teamRepository->findAll();
-        return $this->render('home/index.html.twig', [
+        return $this->render('home/team.html.twig', [
             'teams' => $teams,
         ]);
     }
