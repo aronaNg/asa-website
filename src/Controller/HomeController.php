@@ -2,9 +2,7 @@
 
 namespace App\Controller;
 
-use App\Repository\NewsRepository;
 use App\Repository\TeamRepository;
-use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
