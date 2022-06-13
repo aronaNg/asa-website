@@ -14,14 +14,13 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ asset('media/don.jpg') }}" alt="slide des dons">
+                    <img src="{{ asset('media/sine.jpg') }}" alt="slide des dons">
                     <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
 
                     <div class="container">
                         <div class="carousel-caption text-start">
-                            <h1>Example headline.</h1>
-                            <p>Some representative placeholder content for the first slide of the carousel.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                            <h1>les îles du sine saloum.</h1>
+                            <p>les actions majeures de l'association se passent actuellement dans cette île qui est une zone éloignée de la capitale.</p>
                         </div>
                     </div>
                 </div>
@@ -32,20 +31,21 @@
 
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>Another example headline.</h1>
-                            <p>Some representative placeholder content for the second slide of the carousel.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                            <h1 class="text-light">Équipements de salles d'accouchement avec notre partenaire.</h1>
+                            <p> .</p>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
+                    <img src="{{ asset('media/don.jpg') }}" alt="slide des dons">
+
+
                     <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
 
                     <div class="container">
                         <div class="carousel-caption text-end">
-                            <h1>One more for good measure.</h1>
-                            <p>Some representative placeholder content for the third slide of this carousel.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                            <h1 class="text-light">Don de matériels sanitaires.</h1>
+                            <p>Remise de matériels de soin à l'hopital  .</p>
                         </div>
                     </div>
                 </div>
@@ -59,12 +59,23 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        {% include 'home/team.html.twig' %}
+        {{  include('home/team.html.twig') }}
 
-        <!-- FOOTER -->
-        <footer class="container-fluid bg-dark text-center text-white">
-            <p class="float-end"><a href="#">Back to top</a></p>
-            <p>&copy; Some stuff about ASA &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+
+        <footer class="text-center text-white" style="background-color: #f1f1f1;">
+            <!-- Grid container -->
+            <div class="container pt-4">
+                <!-- Section: Social media -->
+                <p class="float-end"><a href="#">Back to top</a></p>
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2022 Copyright ASA
+                <a class="text-dark" style="text-decoration: none" href="#">- Actions Sociales Afrique</a>
+            </div>
+            <!-- Copyright -->
         </footer>
 
     </main>
