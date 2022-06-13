@@ -32,7 +32,11 @@
 </div>
 <div class="container-fluid bg-3 text-left" style="text-align:center;">
     <p>Sujet: {{ sujet }}</p>
-    <p>Message:  {{ message }} </p>
+    <p>Message: </p>
+    <div>
+        {{ message|raw }}
+
+    </div>
     <hr>
 </div>
 <div class="bg-1 sizefooter">
