@@ -38,7 +38,9 @@ class PaymentController extends AbstractController
                     'price_data' => [
                         'currency'     => 'eur',
                         'product_data' => [
-                            'name' => 'Don pour ASA',
+                            'name' => 'Pour être dans l’action, nous avons prévu un fonctionnement basique avec 15 membres à minima
+dont chacun verse 10 euros par mois soit 120 euros à l’année. Cela nous permet d atteindre 1500€ (1 million de
+francs CFA) destiné à un projet proposé par le conseil d’administration. Nous comptons sur votre bienveillance',
                         ],
                         'unit_amount'  => 1000,
                     ],
