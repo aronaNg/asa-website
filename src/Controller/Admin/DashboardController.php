@@ -29,7 +29,6 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-       //     ->setTitle('Asa App')
             ->setTitle(' Admin ASA');
     }
 
@@ -53,8 +52,8 @@ class DashboardController extends AbstractDashboardController
 
         yield MenuItem::section('Team');
         yield MenuItem::subMenu('Actions', 'fas fa-users')->setSubItems([
-            MenuItem::linkToCrud('Create Team', 'fas fa-plus', Team::class)->setAction(Crud::PAGE_NEW),
-            MenuItem::linkToCrud('Show Team', 'fas fa-eye', Team::class)
+            MenuItem::linkToCrud('Create member', 'fas fa-plus', Team::class)->setAction(Crud::PAGE_NEW),
+            MenuItem::linkToCrud('Show members', 'fas fa-eye', Team::class)
         ]);
     }
 }

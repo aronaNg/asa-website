@@ -88,7 +88,7 @@
                                     <img src="{{ vich_uploader_asset(team, 'imageFile') }}" alt="Image {{ team.name }}" style="height: 130px" class="img-fluid rounded-circle w-50 mb-3">
                                     <h3>{{ team.name }}</h3>
                                     <h5>Membre</h5>
-                                    <p>{{ team.entitled }}</p>
+                                    <p>{{ team.entitled|raw }}</p>
                                 </div>
                             </div>
                         </div>

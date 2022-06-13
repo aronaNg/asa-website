@@ -52,7 +52,8 @@ class NewsCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id')->hideOnForm(),
+            IdField::new('id')->hideOnForm()
+            ->hideOnIndex(),
 
             ImageField::new('image',"image")
                 ->setRequired(true)
