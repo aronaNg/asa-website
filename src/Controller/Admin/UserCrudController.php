@@ -19,6 +19,13 @@ class UserCrudController extends AbstractCrudController
     {
         return User::class;
     }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('Utilisateur')
+            ->setEntityLabelInPlural('Utilisateurs')
+            ->setPageTitle('index','Administration des utilisateurs');
+    }
 
     public function configureActions(Actions $actions): Actions
     {
@@ -47,13 +54,13 @@ class UserCrudController extends AbstractCrudController
             IdField::new('id')
             ->hideOnForm()
             ->hideOnIndex(),
-            EmailField::new('email'),
-            TextField::new('firstName'),
-            TextField::new('lastName'),
-            TextField::new('password')
+            EmailField::new('email', "Email"),
+            TextField::new('firstName','Prénom'),
+            TextField::new('lastName', 'Nom'),
+            TextField::new('password', 'Mot de passe')
                 ->hideOnIndex(),
-            ArrayField::new('roles'),
-            BooleanField::new('isVerified')
+            ArrayField::new('roles','Rôles'),
+            BooleanField::new('isVerified','estvérifié')
 
         ];
     }

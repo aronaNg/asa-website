@@ -27,6 +27,14 @@ class NewsCrudController extends AbstractCrudController
         return News::class;
     }
 
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('Actualité')
+            ->setEntityLabelInPlural('Actualités')
+            ->setPageTitle('index','Gestions des actualités');
+    }
+
 
     public function configureActions(Actions $actions): Actions
     {
@@ -60,9 +68,9 @@ class NewsCrudController extends AbstractCrudController
                 ->hideOnForm()
                 ->setBasePath('/upload/images/news/')
                 ->setUploadDir('/public/upload/images/news/'),
-            TextField::new('title', "News title"),
-            TextEditorField::new('description'),
-            TextareaField::new('imageNews', "News image")
+            TextField::new('title', "Titre de l'actualités"),
+            TextEditorField::new('description', 'Une description'),
+            TextareaField::new('imageNews', "Image")
                 ->setFormType(VichImageType::class)
                 ->hideOnIndex(),
             DateTimeField::new('createdAt')->hideOnForm(),

@@ -21,11 +21,13 @@ class TeamCrudController extends AbstractCrudController
     {
         return Team::class;
     }
+
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setEntityLabelInSingular('Member')
-            ->setPageTitle('index','Membre');
+            ->setEntityLabelInSingular('Membre')
+            ->setEntityLabelInPlural('Membres')
+            ->setPageTitle('index','Gestions des Membres');
     }
 
     public function configureActions(Actions $actions): Actions
@@ -59,9 +61,9 @@ class TeamCrudController extends AbstractCrudController
                 ->setBasePath('/upload/images/team/')
                 ->setUploadDir('/public/upload/images/team/'),
 
-            TextField::new('name'),
-            TextEditorField::new('entitled'),
-            TextareaField::new('imageFile')
+            TextField::new('name','Nom du membre'),
+            TextEditorField::new('entitled','Fonctions du membre'),
+            TextareaField::new('imageFile', 'Photo du membre')
                 ->setFormType(VichImageType::class)
                 ->hideOnIndex(),
 

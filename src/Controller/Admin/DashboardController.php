@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class DashboardController extends AbstractDashboardController
 {
     /**
-     * @Route("/admin", name="admin")
+     * @Route("/{_locale}/admin", name="admin")
      */
     public function index(): Response
     {
@@ -34,26 +34,26 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToRoute('User interface','fa fa-house-user','app_home');
+        yield MenuItem::linkToDashboard('Tableau de bord', 'fa fa-home');
+        yield MenuItem::linkToRoute('Interface utilisateur','fa fa-house-user','app_home');
       //  yield MenuItem::linkToCrud('Actualités', 'fas fa-newspaper', News::class);
 
-        yield MenuItem::section('News');
+        yield MenuItem::section('Actualités');
         yield MenuItem::subMenu('Actions', 'fas fa-bars')->setSubItems([
-            MenuItem::linkToCrud('Create News', 'fas fa-plus', News::class)->setAction(Crud::PAGE_NEW),
-            MenuItem::linkToCrud('Show News', 'fas fa-eye', News::class)
+            MenuItem::linkToCrud('Créer Actualité', 'fas fa-plus', News::class)->setAction(Crud::PAGE_NEW),
+            MenuItem::linkToCrud('Consulter Actualités', 'fas fa-eye', News::class)
         ]);
 
-        yield MenuItem::section('Users');
+        yield MenuItem::section('Utilisateurs');
         yield MenuItem::subMenu('Actions', 'fas fa-user')->setSubItems([
-            MenuItem::linkToCrud('Create User', 'fas fa-plus', User::class)->setAction(Crud::PAGE_NEW),
-            MenuItem::linkToCrud('Show Users', 'fas fa-eye', User::class)
+            MenuItem::linkToCrud('Create utilisateur', 'fas fa-plus', User::class)->setAction(Crud::PAGE_NEW),
+            MenuItem::linkToCrud('Consulter Utilisateurs', 'fas fa-eye', User::class)
         ]);
 
-        yield MenuItem::section('Team');
+        yield MenuItem::section('Équipe');
         yield MenuItem::subMenu('Actions', 'fas fa-users')->setSubItems([
-            MenuItem::linkToCrud('Create member', 'fas fa-plus', Team::class)->setAction(Crud::PAGE_NEW),
-            MenuItem::linkToCrud('Show members', 'fas fa-eye', Team::class)
+            MenuItem::linkToCrud('Créer membre', 'fas fa-plus', Team::class)->setAction(Crud::PAGE_NEW),
+            MenuItem::linkToCrud('Consulter membres', 'fas fa-eye', Team::class)
         ]);
     }
 }
