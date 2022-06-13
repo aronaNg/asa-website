@@ -35,7 +35,7 @@ class NewsCrudController extends AbstractCrudController
         return $actions
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
             ->update(Crud::PAGE_INDEX, Action::NEW, function(Action $action){
-                return $action->setIcon('fa fa-newspaper')->addCssClass('btn btn-success');
+                return $action->setIcon('fa fa-newspaper')->addCssClass('btn btn-info');
             })
             ->update(Crud::PAGE_INDEX, Action::EDIT, function(Action $action){
             return $action->setIcon('fa fa-edit')->addCssClass('btn btn-warning');
@@ -52,7 +52,8 @@ class NewsCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id')->hideOnForm(),
+            IdField::new('id')->hideOnForm()
+            ->hideOnIndex(),
 
             ImageField::new('image',"image")
                 ->setRequired(true)

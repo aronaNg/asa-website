@@ -21,6 +21,12 @@ class TeamCrudController extends AbstractCrudController
     {
         return Team::class;
     }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('Member')
+            ->setPageTitle('index','Membre');
+    }
 
     public function configureActions(Actions $actions): Actions
     {
@@ -29,7 +35,7 @@ class TeamCrudController extends AbstractCrudController
         return $actions
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
             ->update(Crud::PAGE_INDEX, Action::NEW, function(Action $action){
-                return $action->setIcon('fa fa-users')->addCssClass('btn btn-success');
+                return $action->setIcon('fa fa-users')->addCssClass('btn btn-info');
             })
             ->update(Crud::PAGE_INDEX, Action::EDIT, function(Action $action){
                 return $action->setIcon('fa fa-edit')->addCssClass('btn btn-warning');
@@ -45,7 +51,9 @@ class TeamCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id')->hideOnForm(),
+            IdField::new('id')
+                ->hideOnForm()
+                ->hideOnIndex(),
             ImageField::new('image',"image")
                 ->hideOnForm()
                 ->setBasePath('/upload/images/team/')
