@@ -19,8 +19,6 @@ use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class NewsCrudController extends AbstractCrudController
 {
-    public const NEWS_BASE_PATH = 'upload/images/news';
-    public const NEWS_UPLOAD_DIR = 'public/upload/images/news';
 
     public static function getEntityFqcn(): string
     {
@@ -32,7 +30,7 @@ class NewsCrudController extends AbstractCrudController
         return $crud
             ->setEntityLabelInSingular('Actualité')
             ->setEntityLabelInPlural('Actualités')
-            ->setPageTitle('index','Gestions des actualités');
+            ->setPageTitle('index','Gestion des actualités');
     }
 
 
@@ -64,7 +62,6 @@ class NewsCrudController extends AbstractCrudController
             ->hideOnIndex(),
 
             ImageField::new('image',"image")
-                ->setRequired(true)
                 ->hideOnForm()
                 ->setBasePath('/upload/images/news/')
                 ->setUploadDir('/public/upload/images/news/'),
