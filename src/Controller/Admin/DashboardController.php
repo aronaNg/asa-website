@@ -38,16 +38,17 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToRoute('Interface utilisateur','fa fa-house-user','app_home');
       //  yield MenuItem::linkToCrud('Actualités', 'fas fa-newspaper', News::class);
 
-        yield MenuItem::section('Actualités');
-        yield MenuItem::subMenu('Actions', 'fas fa-bars')->setSubItems([
-            MenuItem::linkToCrud('Créer Actualité', 'fas fa-plus', News::class)->setAction(Crud::PAGE_NEW),
-            MenuItem::linkToCrud('Consulter Actualités', 'fas fa-eye', News::class)
-        ]);
 
         yield MenuItem::section('Utilisateurs');
         yield MenuItem::subMenu('Actions', 'fas fa-user')->setSubItems([
-            MenuItem::linkToCrud('Créer utilisateur', 'fas fa-plus', User::class)->setAction(Crud::PAGE_NEW),
-            MenuItem::linkToCrud('Consulter Utilisateurs', 'fas fa-eye', User::class)
+            MenuItem::linkToCrud('Créer utiliateur', 'fas fa-plus', User::class)->setAction(Crud::PAGE_NEW),
+            MenuItem::linkToCrud('Consulter utilisateurs', 'fas fa-eye', User::class)
+        ]);
+
+        yield MenuItem::section('Actualités');
+        yield MenuItem::subMenu('Actions', 'fas fa-bars')->setSubItems([
+            MenuItem::linkToCrud('Créer actualité', 'fas fa-plus', News::class)->setAction(Crud::PAGE_NEW),
+            MenuItem::linkToCrud('Consulter actualités', 'fas fa-eye', News::class)
         ]);
 
         yield MenuItem::section('Équipe');
