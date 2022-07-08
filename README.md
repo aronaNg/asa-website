@@ -14,7 +14,7 @@ MySQL 8.0
 
 💡 git clone https://github.com/stages-asa-app/asa-app.git
 
-💡 Install npm :  sudo apt-get install -y npm
+💡 Install node or npm :  go to https://nodejs.org/en/download/ OR in the terminal sudo apt-get install -y npm
 
 💡 Install dependencies : composer install
 
@@ -36,4 +36,4 @@ MySQL 8.0
 
 :white_check_mark: launch the app and enjoy 🧑‍💻 : symfony serve
 
-💥 Important: If you are having problems with the "build", check if you have the public/build folder which contains files. Otherwise do "npm run" and take one of the indicated choices
+💥 Important: If you are having issues with the "build", check if you have the public/build folder which contains files. Otherwise do "npm run" and take one of the indicated choices
